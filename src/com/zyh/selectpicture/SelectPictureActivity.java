@@ -44,7 +44,7 @@ public class SelectPictureActivity extends Activity {
     /**
      * 最多选择图片的个数
      */
-    private static int MAX_NUM = 6;
+    private static int MAX_NUM = 1;
     private static final int TAKE_PICTURE = 520;
 
     public static final String INTENT_MAX_NUM = "intent_max_num";
@@ -77,8 +77,8 @@ public class SelectPictureActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        setContentView(R.layout.activity_select_picture);
-        MAX_NUM = getIntent().getIntExtra(INTENT_MAX_NUM, 6);
+        setContentView(R.layout.selectpic_activity_select_picture);
+        MAX_NUM = getIntent().getIntExtra(INTENT_MAX_NUM, 1);
         context = this;
         mContentResolver = getContentResolver();
         loader = ImageLoader.getInstance();
@@ -255,7 +255,7 @@ public class SelectPictureActivity extends Activity {
 
             ViewHolder holder = null;
             if (convertView == null) {
-                convertView = View.inflate(context, R.layout.grid_item_picture, null);
+                convertView = View.inflate(context, R.layout.selectpic_grid_item_picture, null);
                 holder = new ViewHolder();
                 holder.iv = (ImageView) convertView.findViewById(R.id.iv);
                 holder.checkBox = (Button) convertView.findViewById(R.id.check);
@@ -264,7 +264,7 @@ public class SelectPictureActivity extends Activity {
                 holder = (ViewHolder) convertView.getTag();
             }
             if (position == 0) {
-                holder.iv.setImageResource(R.drawable.pickphotos_to_camera_normal);
+                holder.iv.setImageResource(R.drawable.selectpic_pickphotos_to_camera_normal);
                 holder.checkBox.setVisibility(View.INVISIBLE);
             } else {
                 position = position - 1;
@@ -320,7 +320,7 @@ public class SelectPictureActivity extends Activity {
         public View getView(int position, View convertView, ViewGroup parent) {
             FolderViewHolder holder = null;
             if (convertView == null) {
-                convertView = View.inflate(context, R.layout.list_dir_item, null);
+                convertView = View.inflate(context, R.layout.selectpic_list_dir_item, null);
                 holder = new FolderViewHolder();
                 holder.id_dir_item_image = (ImageView) convertView.findViewById(R.id.id_dir_item_image);
                 holder.id_dir_item_name = (TextView) convertView.findViewById(R.id.id_dir_item_name);

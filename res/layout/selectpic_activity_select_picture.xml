@@ -16,7 +16,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_margin="8dp"
-            android:background="@drawable/ic_back_light"
+            android:background="@drawable/selectpic_ic_back_light"
             android:onClick="back" />
 
         <TextView
@@ -74,7 +74,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_margin="8dp"
-                android:background="@drawable/spinner_bg"
+                android:background="@drawable/selectpic_spinner_bg"
                 android:onClick="select"
                 android:text="所有图片"
                 android:textColor="#fff"
